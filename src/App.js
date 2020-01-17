@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Grid } from "semantic-ui-react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+/**
+ * PANALS
+ *
+ */
+
+import UserPanal from "./components/Pages/User/UserPanal";
+import FollowersPanal from "./components/Pages/Folowers/FollowesPanal";
+import PostsPanal from "./components/Pages/Posts/PostsPanal";
+
+class App extends React.Component {
+  render() {
+    return (
+      <Grid container padded stackable divided="vertically" centered>
+        <Grid.Column width={3}>
+          {" "}
+          <UserPanal />
+        </Grid.Column>
+
+        <Grid.Column width={9}>
+          <PostsPanal />
+        </Grid.Column>
+
+        <Grid.Column width={4}>
+          <FollowersPanal />
+        </Grid.Column>
+      </Grid>
+    );
+  }
 }
 
 export default App;
